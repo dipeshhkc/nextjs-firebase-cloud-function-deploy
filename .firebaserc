@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "teamplace-52a41"
+  },
+  "targets": {
+    "teamplace-52a41": {
+      "hosting": {
+        "try": [
+          "teamplace-try"
+        ]
+      }
+    }
+  }
+}

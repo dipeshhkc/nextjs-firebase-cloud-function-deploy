@@ -1,15 +1,33 @@
 {
   "name": "test",
   "version": "0.1.0",
-  "private": true,
+  "private": true, 
+  "main": "function.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "start":"next",
+    "dev:client": "next src/client",
+    "dev:server": "babel src/server --out-dir dist/server --source-maps --watch",
+    "dev": "npm run dev:client & npm run dev:server",
+    "build:client": "next build src/client",
+    "build:server": "babel src/server --out-dir dist/server --source-maps",
+    "build": "npm run build:client && npm run build:server",
+    "preserve": "next build",
+    "deploy": "rimraf dist/ && npm run build && cross-env NODE_ENV=production firebase deploy --only functions,hosting"
   },
+
   "dependencies": {
+    "firebase-admin": "^9.1.1",
+    "firebase-functions": "^3.11.0",
     "next": "9.5.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-jss": "^10.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "cross-env": "^7.0.2",
+    "rimraf": "^3.0.2"
   }
 }
