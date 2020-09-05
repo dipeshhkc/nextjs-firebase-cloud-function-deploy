@@ -113,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 function Register(props) {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("h1", null, " Hello Register ji "), __jsx("h2", null, " ", props.name));
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("h1", null, " Hello New Register ji "), __jsx("h2", null, " ", props.name));
 }
 async function getServerSideProps() {
   return {

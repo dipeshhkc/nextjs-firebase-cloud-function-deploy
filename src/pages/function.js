@@ -9,6 +9,6 @@ const server = next({
 });
 
 const nextjsHandle = server.getRequestHandler();
-exports.nextFn = https.onRequest((req, res) => {
+exports.nextServer = https.onRequest((req, res) => {
   return server.prepare().then(() => nextjsHandle(req, res));
 });

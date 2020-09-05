@@ -1,12 +1,18 @@
 export default function Home(props) {
   return (
     <>
-      <h1> Hello ji </h1>
-      <h2> {props.name}</h2>
+      {props.ssrWorking ? (
+        <div style={{display:'flex',justifyContent:'center',flexDirection:"column",flex:0,textAlign:"center"}}>
+          <img src="/assets/success.jpg" height="500" />
+          <h2> Deployment Successful of Nextjs Application with SSR on Firebase. </h2>
+        </div>
+      ) : (
+        <h2>SSR not working</h2>
+      )}
     </>
   );
 }
 
 export async function getServerSideProps() {
-  return { props: { name: 'dipesh' } };
+  return { props: { ssrWorking: true } };
 }
